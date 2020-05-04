@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="City Guide">
+    <meta name="keywords" content="HTML5, CSS, Java Script">
+    <meta name="author" content="Irina Iakovleva">
+    <title>Tetran test task</title>
+</head>
+
+<body>
+    <div class="phone">
+        <div class="phone__number">+7 (903) <span class="number">111-11-33</span> <span class="hidden-text">(Beeline)</span></div>
+        <p class="phone__comment-text">звоните с <span class="green">10</span> до <span class="green">21</span></p>
+    </div>
+    
+    <script src="./jquery.js"></script>
+    <script>
+        const number = $(".number").text();
+        let newNumber = number.replace(/-/g, '');
+        newNumber = newNumber.replace(/(\d\d)(\d\d)(\d\d\d)/g, '$1-$2-$3')
+        $(".number").text(newNumber);
+        $(".hidden-text").hide();
+        
+        $(".phone__number").css({
+            fontSize: 10
+        });
+
+        $(".phone__comment-text").css({
+            "display": "inline",
+            "border-color": "pink", 
+            "border-width":"1px", 
+            "border-style":"solid"
+        });
+            
+        $(".green").css('color', 'green')
+    </script>
+</body>
+</html>
